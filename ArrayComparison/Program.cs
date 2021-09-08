@@ -8,6 +8,8 @@ namespace ArrayComparison
     {
         private static void Main(string[] args)
         {
+            int resultado = 0;
+
             Console.WriteLine("Hello, World!");
             Console.ReadKey();
             string[] inputStr1 = { "Java", "CSharp", "Xamarin", "Windows", "android", "iOS" };
@@ -24,6 +26,19 @@ namespace ArrayComparison
             Console.WriteLine("Comparison result of inputStr3 and input1 is " + Enumerable.SequenceEqual(inputStr3, inputStr1));
             Console.WriteLine("Comparison result of inputStr3 and input2 is " + Enumerable.SequenceEqual(inputStr3, inputStr2));
             Console.ReadLine();
+            //another way to compare  2 arrays
+            foreach (string sOutput2 in inputStr3)
+            {
+                foreach (string sOutput in inputStr1)
+                {
+                    if (sOutput2.ToString().Trim() == sOutput.ToString())
+                        resultado = resultado + 1;
+                }
+            }
+            Console.WriteLine("Comparison result of inputStr and inputstr2 is " + resultado);
+            Console.ReadKey();
+
+
         }
     }
 }
